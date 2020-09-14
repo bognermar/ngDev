@@ -1,0 +1,9 @@
+<div class="container">
+  <h3>This is the food:</h3>
+  <div *ngFor="let f of foodItems">{{ f.name }}, {{ f.price }} €</div>
+</div>
+
+<div class="container">
+  <h3>This is the food:</h3>
+  <div *ngFor="let f of food | async">{{ f.name }}, {{ f.price }} €</div>
+</div>
