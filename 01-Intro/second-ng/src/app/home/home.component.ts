@@ -15,6 +15,8 @@ export class HomeComponent implements OnInit {
   foodItems: FoodItem[];
 
   ngOnInit(): void {
-    this.fs.getFood().subscribe((data) => (this.foodItems = data));
+    this.fs.getFood().subscribe((data) => {
+      this.foodItems = data;
+    });
   }
 }
