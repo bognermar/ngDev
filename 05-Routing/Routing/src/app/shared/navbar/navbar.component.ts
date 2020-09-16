@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router, Route } from '@angular/router';
 import { SnackbarService } from '../snackbar/snackbar.service';
 import { MenuService } from '../menu/menu.service';
-import { Observable } from 'rxjs';
-import { MenuItem } from '../menu/menu-item.model';
 
 @Component({
   selector: 'app-navbar',
@@ -19,11 +17,10 @@ export class NavbarComponent implements OnInit {
 
   editorDisplayed: boolean;
   rootRoutes: Route[];
-  menuItems: Observable<MenuItem[]>;
+  menuItems = this.ms.getTopItems();
 
   ngOnInit() {
     this.editorDisplayed = false;
-    this.menuItems = this.ms.getTopItems();
   }
 
   toggleMenu() {

@@ -3,5 +3,5 @@ export const environment = {
   title: 'ngRouting',
   api: '/assets/skills.json',
   markdownPath: '/assets/markdown/',
-  authEnabled: true,
+  authEnabled: false,
 };
