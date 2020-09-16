@@ -10,6 +10,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { HttpClientModule } from '@angular/common/http';
 import { MatTableModule } from '@angular/material/table';
+import { ItemsContainerComponent } from './items/items-container/items-container.component';
+import { ItemsListComponent } from './items/items-list/items-list.component';
+import { ItemEditComponent } from './items/item-edit/item-edit.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,6 +21,9 @@ import { MatTableModule } from '@angular/material/table';
     NavbarComponent,
     SidebarComponent,
     HomeComponent,
+    ItemsContainerComponent,
+    ItemsListComponent,
+    ItemEditComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,6 +32,7 @@ import { MatTableModule } from '@angular/material/table';
     MatToolbarModule,
     HttpClientModule,
     MatTableModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

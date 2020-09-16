@@ -1,15 +1,17 @@
-<div>
-  <h1>Shopping Items</h1>
-  <table style="width: 100%">
+<h1>Shopping Items</h1>
+<table class="items">
+  <thead>
     <tr>
       <th>Name</th>
       <th>Preis</th>
-      <th>Aktionen</th>
+      <th></th>
     </tr>
+  </thead>
+  <tbody>
     <tr *ngFor="let item of items | async">
       <td>{{ item.name }}</td>
-      <td>{{ item.price }}</td>
-      <td>Button</td>
+      <td>{{ item.price | currency }}</td>
+      <td>Buy</td>
     </tr>
-  </table>
-</div>
+  </tbody>
+</table>

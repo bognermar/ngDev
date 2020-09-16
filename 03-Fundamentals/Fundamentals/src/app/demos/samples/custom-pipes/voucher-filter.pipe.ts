@@ -10,7 +10,7 @@ export class VoucherFilterPipe implements PipeTransform {
       return items;
     }
     return items.filter((item) =>
-      item[field].toLowerCase().includes(filter.toLowerCase())
+      item[field].trim().toLowerCase().includes(filter.trim().toLowerCase())
     );
   }
 }

@@ -1,0 +1,21 @@
+<h1>Shopping Items</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Preis</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of items">
+      <td>{{ item.name }}</td>
+      <td>{{ item.price | currency }}</td>
+      <td>
+        <button (click)="openItemSettings(item)">Edit</button>
+        <button (click)="remove(item)">Remove</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

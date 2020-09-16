@@ -1,8 +1,6 @@
 <mat-card>
   <mat-card-header>
-    <mat-card-title>
-      Table
-    </mat-card-title>
+    <mat-card-title> Table </mat-card-title>
   </mat-card-header>
   <mat-card-content>
     <table class="table table-striped table-hover">
@@ -15,7 +13,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let v of vouchers">
+        <tr *ngFor="let v of vouchers | async">
           <td>{{ v.ID }}</td>
           <td>{{ v.Text }}</td>
           <td>{{ v.Amount }}</td>
@@ -28,13 +26,11 @@
 
 <mat-card>
   <mat-card-header>
-    <mat-card-title>
-      List
-    </mat-card-title>
+    <mat-card-title> List </mat-card-title>
   </mat-card-header>
   <mat-card-content>
     <ul>
-      <li *ngFor="let p of persons">{{ p.name }}</li>
+      <li *ngFor="let p of persons | async">{{ p.name }}</li>
     </ul>
   </mat-card-content>
 </mat-card>
@@ -74,5 +70,8 @@
       <b *ngSwitchCase="direction.South">Going South Direction ...</b>
       <b *ngSwitchDefault>No Direction</b>
     </ng-container>
+    <div>
+      <button mat-raised-button (click)="switchSouth()">Change to South</button>
+    </div>
   </mat-card-content>
 </mat-card>
