@@ -11,7 +11,7 @@ import { ItemsContainerComponent } from './items/items-container/items-container
 import { ItemsListComponent } from './items/items-list/items-list.component';
 import { ItemEditComponent } from './items/item-edit/item-edit.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppUiModule } from './app-ui.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -31,6 +31,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     AppUiModule,
     FlexLayoutModule,
   ],

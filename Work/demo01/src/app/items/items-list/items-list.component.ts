@@ -7,7 +7,7 @@ import { ShopptingItem } from '../../shopping/shopping-item.model';
   styleUrls: ['./items-list.component.scss'],
 })
 export class ItemsListComponent {
-  @Input() items: ShopptingItem;
+  @Input() items: ShopptingItem[];
   @Output() changeItem: EventEmitter<ShopptingItem> = new EventEmitter();
   @Output() removeItem: EventEmitter<ShopptingItem> = new EventEmitter();
 
@@ -16,6 +16,20 @@ export class ItemsListComponent {
 
   openItemSettings(item: ShopptingItem) {
     this.changeItem.emit(item);
+  }
+
+  addItem() {
+    this.changeItem.emit({
+      id: this.getNextId(),
+      name: '',
+      price: null,
+    });
+  }
+
+  getNextId() {
+    return (
+      this.items.reduce((acc, f) => (acc = acc > f.id ? acc : f.id), 0) + 1
+    );
   }
 
   remove(item: ShopptingItem) {

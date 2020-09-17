@@ -17,6 +17,7 @@ export class ItemsContainerComponent implements OnInit {
   }
 
   selectItem(item: ShopptingItem) {
+    console.log('item', item);
     this.selectedItem = { ...item };
   }
 
@@ -33,9 +34,5 @@ export class ItemsContainerComponent implements OnInit {
 
   removeItem(item: ShopptingItem) {
     this.items = this.items.filter((i) => i.id !== item.id);
-  }
-
-  addItem() {
-    console.log('add item');
   }
 }
