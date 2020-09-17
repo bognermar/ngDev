@@ -8,7 +8,16 @@
     *ngIf="selectedItem"
     [item]="selectedItem"
     (saveItem)="saveItemValus($event)"
+    (closeItem)="closeItemEdit()"
   ></app-item-edit>
+  <button
+    *ngIf="!selectedItem"
+    mat-flat-button
+    color="accent"
+    (click)="addItem()"
+  >
+    <mat-icon>add</mat-icon>
+  </button>
 </ng-container>
 
 <div *ngIf="!items">

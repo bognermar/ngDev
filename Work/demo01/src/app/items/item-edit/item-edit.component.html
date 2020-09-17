@@ -1,13 +1,23 @@
-<div>
+<div class="form full-width">
   <h2>Edit Item</h2>
-  <div>
-    <label>Name</label>
-    <input type="text" [(ngModel)]="item.name" />
-  </div>
-  <div>
-    <label>Price</label>
-    <input type="number" [(ngModel)]="item.price" />
-  </div>
 
-  <button (click)="saveNewValues()">Save</button>
+  <mat-form-field class="full-width">
+    <mat-label>Name</mat-label>
+    <input matInput [(ngModel)]="item.name" />
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <mat-label>Price</mat-label>
+    <input matInput [(ngModel)]="item.price" />
+  </mat-form-field>
+
+  <div class="actions">
+    <button mat-flat-button color="accent" (click)="saveNewValues()">
+      <mat-icon>save</mat-icon>
+    </button>
+
+    <button mat-flat-button color="accent" (click)="closeCard()">
+      <mat-icon>clear</mat-icon>
+    </button>
+  </div>
 </div>

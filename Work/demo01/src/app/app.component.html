@@ -1,14 +1,12 @@
-<div>
-  <nav>
-    <app-navbar></app-navbar>
-  </nav>
-  <div class="container">
+<div class="page-container">
+  <app-navbar></app-navbar>
+
+  <div class="content-container">
     <aside>
       <app-sidebar></app-sidebar>
     </aside>
     <main>
-      <!--<app-home></app-home>-->
-      <app-items-container></app-items-container>
+      <router-outlet></router-outlet>
     </main>
   </div>
 </div>

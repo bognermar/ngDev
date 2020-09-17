@@ -7,13 +7,12 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { HttpClientModule } from '@angular/common/http';
-import { MatTableModule } from '@angular/material/table';
 import { ItemsContainerComponent } from './items/items-container/items-container.component';
 import { ItemsListComponent } from './items/items-list/items-list.component';
 import { ItemEditComponent } from './items/item-edit/item-edit.component';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { AppUiModule } from './app-ui.module';
 
 @NgModule({
   declarations: [
@@ -29,10 +28,9 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatToolbarModule,
     HttpClientModule,
-    MatTableModule,
     FormsModule,
+    AppUiModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

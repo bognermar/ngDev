@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ShopptingItem } from '../shopping/shopping-item.model';
-import { ShoppingService } from '../shopping/shopping.service';
 
 @Component({
   selector: 'app-home',
@@ -8,10 +6,7 @@ import { ShoppingService } from '../shopping/shopping.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  constructor(private shoppingService: ShoppingService) {}
-
-  items = this.shoppingService.getItems();
-  // displayedColumns: string[] = ['actions', 'name', 'preis', 'symbol'];
+  constructor() {}
 
   ngOnInit(): void {}
 }

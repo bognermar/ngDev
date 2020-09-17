@@ -20,6 +20,10 @@ export class ItemsContainerComponent implements OnInit {
     this.selectedItem = { ...item };
   }
 
+  closeItemEdit() {
+    this.selectedItem = null;
+  }
+
   saveItemValus(item: ShopptingItem) {
     this.items = this.items.filter((i) => i.id !== item.id);
     this.items.push(item);
@@ -28,5 +32,9 @@ export class ItemsContainerComponent implements OnInit {
 
   removeItem(item: ShopptingItem) {
     this.items = this.items.filter((i) => i.id !== item.id);
+  }
+
+  addItem() {
+    console.log('add item');
   }
 }

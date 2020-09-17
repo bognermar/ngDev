@@ -1,0 +1,20 @@
+// @import "theme/themes.scss";
+
+header {
+  display: flex;
+  justify-content: space-between;
+
+  background-color: #33691e;
+  color: #fff;
+  //background: $primary; //todo
+  //color: $white;
+  padding: 1.5rem;
+  font-size: 1.5rem;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin-left: 1rem;
+  }
+}

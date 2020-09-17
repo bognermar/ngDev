@@ -9,11 +9,16 @@ import { ShopptingItem } from '../../shopping/shopping-item.model';
 export class ItemEditComponent implements OnInit {
   @Input() item: ShopptingItem;
   @Output() saveItem: EventEmitter<ShopptingItem> = new EventEmitter();
+  @Output() closeItem: EventEmitter<ShopptingItem> = new EventEmitter();
   constructor() {}
 
   ngOnInit(): void {}
 
   saveNewValues() {
     this.saveItem.emit(this.item);
+  }
+
+  closeCard() {
+    this.closeItem.emit();
   }
 }

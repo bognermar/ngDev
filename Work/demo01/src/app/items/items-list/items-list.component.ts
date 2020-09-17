@@ -11,6 +11,7 @@ export class ItemsListComponent {
   @Output() changeItem: EventEmitter<ShopptingItem> = new EventEmitter();
   @Output() removeItem: EventEmitter<ShopptingItem> = new EventEmitter();
 
+  displayedColumns: string[] = ['id', 'name', 'price', 'actions'];
   constructor() {}
 
   openItemSettings(item: ShopptingItem) {
