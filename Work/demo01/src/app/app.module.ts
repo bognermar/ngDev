@@ -13,6 +13,7 @@ import { ItemEditComponent } from './items/item-edit/item-edit.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AppUiModule } from './app-ui.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { AppUiModule } from './app-ui.module';
     HttpClientModule,
     FormsModule,
     AppUiModule,
+    FlexLayoutModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

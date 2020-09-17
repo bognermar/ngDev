@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { fromEvent, Subscription } from 'rxjs';
-import { pairwise, switchMap, takeUntil } from 'rxjs/operators';
+import { pairwise, switchMap, takeUntil, delay } from 'rxjs/operators';
 
 @Component({
   selector: 'app-mouse-dom-observables',
@@ -107,10 +107,10 @@ export class MouseDomObservablesComponent implements AfterViewInit {
   }
 
   subscribeSearchBox() {
-    fromEvent(this.searchBox.nativeElement, 'keyup').subscribe(
-      (ke: KeyboardEvent) => {
+    fromEvent(this.searchBox.nativeElement, 'keyup')
+      .pipe(delay(2000))
+      .subscribe((ke: KeyboardEvent) => {
         console.log('Event received from Keyboard:', ke);
-      }
-    );
+      });
   }
 }

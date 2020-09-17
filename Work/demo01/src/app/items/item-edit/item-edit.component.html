@@ -12,11 +12,21 @@
   </mat-form-field>
 
   <div class="actions">
-    <button mat-flat-button color="accent" (click)="saveNewValues()">
+    <button
+      title="Save item"
+      mat-mini-fab
+      color="accent"
+      (click)="saveNewValues()"
+    >
       <mat-icon>save</mat-icon>
     </button>
 
-    <button mat-flat-button color="accent" (click)="closeCard()">
+    <button
+      title="Close item"
+      mat-mini-fab
+      color="accent"
+      (click)="closeCard()"
+    >
       <mat-icon>clear</mat-icon>
     </button>
   </div>

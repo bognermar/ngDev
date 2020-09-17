@@ -13,6 +13,7 @@ import { isArray } from 'util';
 import { Voucher } from '../model';
 import { VouchersService } from '../voucher.service';
 import { DoublerService } from './doubler.service';
+import { from } from 'rxjs';
 
 @Component({
   selector: 'app-operators',
@@ -34,8 +35,11 @@ export class OperatorsComponent implements OnInit {
   setLabel = (v) => ({ ...v, Label: `${v.Text} costs € ${v.Amount}` });
 
   log = (msg: string, data: any) => {
-    console.log(`executing: ${msg}, 'data' is Array: ${isArray(data)}`, data);
-    this.vouchers = isArray(data) ? data : [data];
+    console.log(
+      `executing: ${msg}, 'data' is Array: ${Array.isArray(data)}`,
+      data
+    );
+    this.vouchers = Array.isArray(data) ? data : [data];
   };
 
   useMap() {
@@ -55,13 +59,23 @@ export class OperatorsComponent implements OnInit {
   }
 
   useMapAndTap() {
-    this.vs
+    /*this.vs
       .getVouchers()
       .pipe(
         tap((data) => console.log('logged using tap() operator: ', data)),
         map((va) => va.map(this.setLabel))
       )
-      .subscribe((data) => this.log('use pipe(), map() & tap()', data));
+      .subscribe((data) => this.log('use pipe(), map() & tap()', data));*/
+
+    from([2, 10, 20])
+      .pipe(
+        tap((i) => {
+          console.log('tab before' + i);
+          i = i * 2;
+          console.log('tab after' + i);
+        })
+      )
+      .subscribe((item) => console.log('result' + item));
   }
 
   errHandling() {
@@ -81,14 +95,14 @@ export class OperatorsComponent implements OnInit {
   useFind() {
     this.vs
       .getVouchers()
-      .pipe(map((v) => v.find((v: Voucher) => v.ID == 3)))
+      .pipe(map((arr) => arr.find((v: Voucher) => v.ID == 3)))
       .subscribe((data) => this.log('getByID - using find()', data));
   }
 
   useFilter() {
     this.vs
       .getVouchers()
-      .pipe(map((v) => v.filter((v: Voucher) => v.Paid)))
+      .pipe(map((arr) => arr.filter((v: Voucher) => v.Paid)))
       .subscribe((data) => this.log('useFilter', data));
   }
 

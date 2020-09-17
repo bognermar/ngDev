@@ -28,6 +28,7 @@ export class ItemsContainerComponent implements OnInit {
     this.items = this.items.filter((i) => i.id !== item.id);
     this.items.push(item);
     this.items.sort((a, b) => a.id - b.id);
+    this.selectedItem = null;
   }
 
   removeItem(item: ShopptingItem) {

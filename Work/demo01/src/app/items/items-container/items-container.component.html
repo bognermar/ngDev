@@ -11,8 +11,9 @@
     (closeItem)="closeItemEdit()"
   ></app-item-edit>
   <button
+    title="Add item"
     *ngIf="!selectedItem"
-    mat-flat-button
+    mat-mini-fab
     color="accent"
     (click)="addItem()"
   >

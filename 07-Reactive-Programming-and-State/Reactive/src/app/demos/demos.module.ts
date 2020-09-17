@@ -29,6 +29,7 @@ import { demosFeatureKey, DemoReducer } from './store/reducers/demos.reducer';
 import { CreatingObservableComponent } from './samples/creating-observables/creating-observable.component';
 import { AsyncComponent } from './samples/async/async.component';
 import { SharedModule } from '../shared/shared.module';
+import { SumComponent } from './samples/stateful/sum/sum.component';
 
 const demoRoutes: Routes = [
   {
@@ -73,6 +74,7 @@ const demoRoutes: Routes = [
     VoucherEditComponent,
     MarkdownEditorComponent,
     AsyncComponent,
+    SumComponent,
   ],
   imports: [
     CommonModule,
