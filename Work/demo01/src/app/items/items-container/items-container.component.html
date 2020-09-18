@@ -1,0 +1,18 @@
+<ng-container *ngIf="items">
+  <app-items-list
+    [items]="items"
+    (changeItem)="selectItem($event)"
+    (removeItem)="removeItem($event)"
+  ></app-items-list>
+  <app-item-edit
+    *ngIf="selectedItem"
+    [item]="selectedItem"
+    (saveItem)="saveItemValus($event)"
+    (closeItem)="closeItemEdit()"
+  ></app-item-edit>
+</ng-container>
+
+<div *ngIf="!items">
+  <h1>Achtung</h1>
+  <p>Im Moment sind keine Waren vorhanden.</p>
+</div>

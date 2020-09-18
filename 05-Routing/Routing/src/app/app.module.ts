@@ -15,9 +15,6 @@ import { EditorComponent } from './shared/editor/editor.component';
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 import { SharedModule } from './shared/shared.module';
 import { UploaderComponent } from './shared/uploader/uploader.component';
-import { SkillRowComponent } from './skills/skill-row/skill-row.component';
-import { SkillsEditComponent } from './skills/skills-edit/skills-edit.component';
-import { SkillsListComponent } from './skills/skills-list/skills-list.component';
 import {
   NgxUploadModule,
   MineTypeEnum,
@@ -41,9 +38,6 @@ export const ngxDropTargetOptions: DropTargetOptions = {
     EditorComponent,
     UploaderComponent,
     AdminComponent,
-    SkillsListComponent,
-    SkillsEditComponent,
-    SkillRowComponent,
   ],
   imports: [
     BrowserModule,

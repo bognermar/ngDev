@@ -9,7 +9,10 @@ import { FormControl, Validators } from '@angular/forms';
 export class FormControlComponent implements OnInit {
   constructor() {}
 
-  name = new FormControl('Giro', [Validators.required]);
+  name = new FormControl('Giro', [
+    Validators.required,
+    Validators.minLength(3),
+  ]);
   postal = new FormControl('3544');
   city = new FormControl('Idolsberg', [Validators.maxLength(15)]);
 

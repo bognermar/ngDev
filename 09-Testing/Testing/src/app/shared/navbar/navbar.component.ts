@@ -1,14 +1,14 @@
-import { Component, OnInit } from "@angular/core";
-import { Router, Route } from "@angular/router";
-import { SnackbarService } from "../snackbar/snackbar.service";
-import { MenuService } from "../menu/menu.service";
-import { Observable } from "rxjs";
-import { MenuItem } from "../menu/MenuItem";
+import { Component, OnInit } from '@angular/core';
+import { Router, Route } from '@angular/router';
+import { SnackbarService } from '../snackbar/snackbar.service';
+import { MenuService } from '../menu/menu.service';
+import { Observable } from 'rxjs';
+import { MenuItem } from '../menu/menu-item.model';
 
 @Component({
-  selector: "app-navbar",
-  templateUrl: "./navbar.component.html",
-  styleUrls: ["./navbar.component.scss"]
+  selector: 'app-navbar',
+  templateUrl: './navbar.component.html',
+  styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
   constructor(
@@ -31,10 +31,10 @@ export class NavbarComponent implements OnInit {
   }
 
   toggleApps() {
-    this.sns.displayAlert("Apps", "Not implemented! - just for demo");
+    this.sns.displayAlert('Apps', 'Not implemented! - just for demo');
   }
 
   showUpload() {
-    this.router.navigate(["", { outlets: { sidebarOutlet: "upload" } }]);
+    this.router.navigate(['', { outlets: { sidebarOutlet: 'upload' } }]);
   }
 }

@@ -8,9 +8,6 @@ import { AdminComponent } from './admin/admin.component';
 import { IsAuthRouteGuard } from './route.guard.service';
 import { AdminAComponent } from './admin-a/admin-a.component';
 import { AdminBComponent } from './admin-b/admin-b.component';
-import { SkillsListComponent } from './skills/skills-list/skills-list.component';
-import { SkillsEditComponent } from './skills/skills-edit/skills-edit.component';
-import { SkillResolverService } from './skills/skill-resolver.service';
 
 const routes: Routes = [
   {
@@ -19,12 +16,8 @@ const routes: Routes = [
   },
   {
     path: 'skills',
-    component: SkillsListComponent,
-  },
-  {
-    path: 'skills/:id',
-    component: SkillsEditComponent,
-    resolve: { skillData: SkillResolverService },
+    loadChildren: () =>
+      import('./skills/skills.module').then((m) => m.SkillsModule),
   },
   {
     path: 'demos',

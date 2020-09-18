@@ -208,7 +208,7 @@ export class TypesComponent implements OnInit {
     const list: number[] = [4, 5, 6];
 
     for (const i in list) {
-      console.log(i); // "0", "1", "2", -> for ... in loop returns index
+      console.log(i); // "0", "1", "2", -> for ... in loop returns index; console.log(list[i]); // "4", "5", "6"
     }
 
     for (const i of list) {

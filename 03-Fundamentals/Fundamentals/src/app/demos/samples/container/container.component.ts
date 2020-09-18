@@ -20,8 +20,8 @@ export class ContainerComponent implements OnInit {
   }
 
   onPersonSelected(p: Person) {
-    // this.current = p;
-    this.current = { ...p };
+    // this.current = p; // gibt wirklich das Objekt mit
+    this.current = { ...p }; // Shalow Cope, Deep Clone
     // this.current = Object.assign({},p)
   }
 
